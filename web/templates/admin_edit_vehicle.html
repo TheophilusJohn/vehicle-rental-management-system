@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Vehicle</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+  <div class="container mt-5">
+    <h3>Edit Vehicle</h3>
+
+    <form method="post">
+
+      <div class="mb-3">
+        <label class="form-label">Vehicle Type</label>
+        <input name="vehicle_type" class="form-control" value="{{ vehicle.VehicleType }}" required>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Model</label>
+        <input name="model" class="form-control" value="{{ vehicle.Model }}" required>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Registration Number</label>
+        <input name="regno" class="form-control" value="{{ vehicle.RegistrationNumber }}" required>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Rental Price</label>
+        <input name="price" type="number" class="form-control" value="{{ vehicle.RentalPrice }}" required>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Status</label>
+        <select name="status" class="form-select">
+          <option value="Available" {% if vehicle.Status=='Available' %}selected{% endif %}>Available</option>
+          <option value="Rented" {% if vehicle.Status=='Rented' %}selected{% endif %}>Rented</option>
+          <option value="Maintenance" {% if vehicle.Status=='Maintenance' %}selected{% endif %}>Maintenance</option>
+        </select>
+      </div>
+
+      <button class="btn btn-primary">Update</button>
+      <a href="/admin/vehicles" class="btn btn-secondary">Cancel</a>
+
+    </form>
+
+  </div>
+
+</body>
+</html>

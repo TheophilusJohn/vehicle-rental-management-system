@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# MacOS stuff
+.DS_Store
+
+# IDE / Editor
+.vscode/
+.idea/
+
+# MySQL Workbench temp files
+*.bak
+*.tmp
